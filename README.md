@@ -45,6 +45,40 @@ By default, the image is configured be started and immediately ready to use.
    > Notice the `-p 8000:8000` option: This exposes port 8000 to your host system.  
    > 8000 is the default JupyterHub port.  
    > `-p <HostPort>:<ContainerPort>`
+   
+## Create Login
+
+By defualt, the docker's container uses PAM for authentication (which is intigreated for the containers OS users)  
+In order to create a login for yourself or others to use for jupyterhub server, you will need to enter the container shell and add the users:
+
+1. Getting the container ID
+
+   ```bash
+   docker ps
+   ```  
+   > Notice the `ps` command shows all running docker containers
+   
+   Find the running container and copy the ID shown
+   
+2. Entering the Container's shell where `<ContainerID>` is the ID from the last step
+
+   ```bash
+   docker exec -it <ContainerID> /bin/bash
+   ```  
+   > Notice the `exec` command allows you to execute a command on the docker container
+   
+   > Notice the `-it` option allows us to enter commands in *Interactive Mode*
+   
+   > Notice the `/bin/bash` allows us to enter into a full interactive shell
+   
+3. Once in the Container's shell we will need to add each user
+
+   ```bash
+   adduser <USERNAME>
+   ```  
+   You can repeat this command for as many users as you need. (I will be working on a way to add users by script)
+   
+4. This should allow you to sign into the jupyter server with the user you have created
 ---
 ### DONE
 The Docker Image should be built, and you should now have a running docker container with a working JupyterHub Server  
