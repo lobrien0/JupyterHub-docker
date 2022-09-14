@@ -1,7 +1,8 @@
+#Using the base image of Ubuntu
 FROM ubuntu
-
 ARG jupyterlocal
 
+#Runs all commands bellow under root
 USER root
 
 #General Updates and Dependency Installs
@@ -12,18 +13,20 @@ RUN apt-get install -yq --no-install-recommends \
 	python3 \
 	python3-pip \
 	nodejs \
-	npm\
-	dotnet6
+	npm
 
-#Install JupyterHub and JupyterLabs
+#Installs the JupyterHub server along with the JupyterLab Dependency
+#Docker Spawner allows us to generate a lab while running in a docker container
 RUN mkdir -p /apps/jupyter
 WORKDIR /apps/jupyter
 RUN pip install jupyterhub
-RUN pip install jupyterlab dockerspawner
+RUN pip install jupyterlab dockerspawner 
 
-#NPM install
+#NPM install, Mangages all the Web handlers to provide a webpage over select ports
 RUN npm install -g configurable-http-proxy
 
+#The port that needs to be exposed to the host system by defualt so you can
 EXPOSE 8000
 
+#Runs the container with this command as primary process
 CMD ["jupyterhub"]
