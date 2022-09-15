@@ -28,23 +28,25 @@ The Overall point of this Docker Image is to allow an easy setup and deployment 
    ```bash  
    docker images
    ```
-   >You should see an image with the *tag* you set earlier in step 3
+   >You should see an image with the *tag* you set earlier in step 3  
 
 
 ## Start Docker Container
 
 By default, the image is configured be started and immediately ready to use.
 
-1. To start a container from the image we just built, enter:
+1. To start a container from the image we just built, do the following:
 
    ```bash  
-   docker run -d -p 8000:8000
+   docker run -d -p 8000:8000 <ImageName>
    ```  
    > Notice the `-d` option: This allows us to start the container detached from your current shell session
 
    > Notice the `-p 8000:8000` option: This exposes port 8000 to your host system.  
    > 8000 is the default JupyterHub port.  
    > `-p <HostPort>:<ContainerPort>`
+   
+   >`<ImageName>` is the name you had given the image when building it ealier
    
 ## Create Login
 
