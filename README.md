@@ -2,13 +2,13 @@
 
 This Docker Image contains an easy setup and deployment of JupyterHub ( A JupyterLab Web Server )
 
-[Method #1](https://github.com/skymotic/JupyterHub-docker/edit/main/README.md#method-1-from-docker-repository)
+[Method #1](https://github.com/skymotic/JupyterHub-docker/README.md#method-1-from-docker-repository)
 *Pull Docker Image from a Docker Repository* (Easy Difficulty)
 
-[Method #2](https://github.com/skymotic/JupyterHub-docker/edit/main/README.md#method-2-build-from-files)
+[Method #2](https://github.com/skymotic/JupyterHub-docker/README.md#method-2-build-from-files)
 *Build the Docker Image from the* `Dockerfile` *in this GitHub* (Medium Difficulty)
 
-[Creating Login](https://github.com/skymotic/JupyterHub-docker/edit/main/README.md#creating-login)
+[Creating Login](https://github.com/skymotic/JupyterHub-docker/README.md#creating-login)
 *Instructions to create your login once the Docker Container is running*
 
 # Method #1: From Docker Repository
