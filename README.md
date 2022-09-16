@@ -24,7 +24,7 @@ docker run -d -p 8000:8000 lobr266238/jupyterhub-basic:1.0
 > `8000:8000` specifies both the Host machines port and the containers port in order: `<HostPort>:<DockerPort>`  
 > If you would like to open this container on a differnt port subsitute this: `-p <NewPort>:8000`
 
-> `lobr266238/jupyterhub-basic:1.0` calls Docker to look at Account: `lobr2166238`, Repository: `jupyterhub-basic`, Tag: `1.0`
+> `lobr266238/jupyterhub-basic:1.0` calls Docker to look at Account: `lobr266238`, Repository: `jupyterhub-basic`, Tag: `1.0`
 
 ---
 
