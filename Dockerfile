@@ -23,11 +23,15 @@ RUN apt-get install -yq --no-install-recommends \
 #Docker Spawner allows us to generate a lab while running in a docker container
 RUN mkdir -p /apps/jupyter
 WORKDIR /apps/jupyter
-RUN pip install jupyterhub
-RUN pip install jupyterlab dockerspawner 
+RUN python3 -m pip install jupyterhub
+RUN python3 -m pip install jupyterlab 
 
 #NPM install, Mangages all the Web handlers to provide a webpage over select ports
 RUN npm install -g configurable-http-proxy
+
+#Copy all scripts to docker image
+RUN mkdir -p /scripts
+COPY ./scripts/* /scripts
 
 #The port that needs to be exposed to the host system by defualt so you can
 EXPOSE 8000
