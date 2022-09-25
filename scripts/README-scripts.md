@@ -5,19 +5,15 @@ These scripts will be copied over to the Docker Image in the location:
 
 > Currently none of the scripts run by default
 
-## `userCreate` Scripts
+## `userCreate` Script
 
-In the case your docker container got destoryed or corrupted this  
-script is designed to search a persistant `/home/` volume for users.  
-It will then Re-Create the users, set home directory ownership, and  
-reset their passwords to `Colorado2022`
+In the case your docker container got destoryed or corrupted this script is designed to search a persistant `/home/` volume for users. It will then Re-Create the users, set home directory ownership, and reset their passwords to `Colorado2022`
 
-> For Security Reasons I could not keep the password
+> For Security Reasons I could not keep the previous password
 
 ### Running Script
 
-by default your working directory should be set to the script folder  
-so you don't need to get all the way into the dockers bash shell.
+By default your working directory should be set to the script folder so you don't need to get all the way into the dockers bash shell.
 
 Instead run the following command:
 
