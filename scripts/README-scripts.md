@@ -5,7 +5,7 @@ These scripts will be copied over to the Docker Image in the location:
 
 > Currently none of the scripts run by default
 
-## `userCreate` Script
+## `userCreate.sh` Script
 
 In the case your docker container got destoryed or corrupted this script is designed to search a persistant `/home/` volume for users. It will then Re-Create the users, set home directory ownership, and reset their passwords to `Colorado2022`
 
