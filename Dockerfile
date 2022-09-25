@@ -31,7 +31,7 @@ RUN npm install -g configurable-http-proxy
 
 #Copy all scripts to docker image
 RUN mkdir -p /scripts
-COPY ./scripts/* /scripts
+COPY ./scripts/* /scripts/
 
 #The port that needs to be exposed to the host system by defualt so you can
 EXPOSE 8000
