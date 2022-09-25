@@ -13,7 +13,11 @@ RUN apt-get install -yq --no-install-recommends \
 	python3 \
 	python3-pip \
 	nodejs \
-	npm
+	npm \
+	pandoc \
+	texlive-xetex \
+	texlive-fonts-recommended \
+	texlive-plain-generic
 
 #Installs the JupyterHub server along with the JupyterLab Dependency
 #Docker Spawner allows us to generate a lab while running in a docker container
