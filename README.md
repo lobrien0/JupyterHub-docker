@@ -16,7 +16,7 @@ The quickest and easiest way to host this JupyterHub server is to pull it from m
 You can *pull* and *run* the image all with one command,but first make sure [docker](https://docs.docker.com/get-docker/) is installed on you system
 
 ```bash
-docker run -d -p 8000:8000 lobr266238/jupyterhub-basic:1.0
+docker run -d -p 8000:8000 lobr266238/jupyterhub-basic		# Will pull latest image
 ```
 > Notice the `-d` option; This allows us to start the container in *Headless Mode* or detached from the current shell
 
