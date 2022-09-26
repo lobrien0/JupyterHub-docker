@@ -2,16 +2,46 @@
 
 This Docker Image contains an easy setup and deployment of JupyterHub ( A JupyterLab Web Server )
 
-[Method #1](https://github.com/skymotic/JupyterHub-docker#method-1-from-docker-repository)
-*Pull Docker Image from a Docker Repository* (Easy Difficulty)
+[Method #1](https://github.com/skymotic/JupyterHub-docker#method-1-from-script)
+*Let the Script do it all for you* (Easy Difficulty)
 
-[Method #2](https://github.com/skymotic/JupyterHub-docker#method-2-build-from-files)
-*Build the Docker Image from the* `Dockerfile` *in this GitHub* (Medium Difficulty)
+[Method #2](https://github.com/skymotic/JupyterHub-docker#method-2-from-docker-repository)
+*Pull Docker Image from a Docker Repository* (Medium-Easy Difficulty)
+
+[Method #3](https://github.com/skymotic/JupyterHub-docker#method-3-build-from-files)
+*Build the Docker Image from the* `Dockerfile` *in this GitHub* (Medium-Hard Difficulty)
 
 [Creating Login](https://github.com/skymotic/JupyterHub-docker#creating-login)
 *Instructions to create your login once the Docker Container is running*
 
-# Method #1: From Docker Repository
+# Method #1: From Script
+
+I have written a script that does all the work for you.
+
+The advantages of running it this way; the script will create persistance storage through the use of docker volumes.  
+This means if you delete the container or it gets corrupted, you can just run the script again and all user logins and files should be restored.
+
+1. Download `runJupyterHub.sh` from this GitHub Repo and put it on your linux enviorment
+
+2. Run the following command:
+
+   ```bash
+   sudo bash runJupyterHub.sh
+   ```
+   
+   > Must be run with root privilege
+   
+   >If you would like to see what the script is doing, inside the script itself are plenty of comments explaining each step
+
+### Short Descption of what the script does:
+
+The script checks if the docker volumes exsist. If they don't it'll create them.  
+Then the script will check if this image already exsists on your computer. If it doesn't, it'll download it  
+Once the image is downloaded it will start the docker container on `port 8000` while attachnig the persistant volumes.  
+Done!
+
+# Method #2: From Docker Repository
+
 The quickest and easiest way to host this JupyterHub server is to pull it from my docker repository.  
 You can *pull* and *run* the image all with one command,but first make sure [docker](https://docs.docker.com/get-docker/) is installed on you system
 
@@ -28,7 +58,7 @@ docker run -d -p 8000:8000 lobr266238/jupyterhub-basic		# Will pull latest image
 
 ---
 
-# Method #2: Build From Files
+# Method #3: Build From Files
 In order to do this method, you will need to download the `Dockerfile` from this repository and put it in its own folder before continuing
 ## Docker Build Process
 
