@@ -32,10 +32,6 @@ RUN python3 -m pip install jupyterlab
 # NPM install, Mangages all the Web handlers to provide a webpage over select ports
 RUN npm install -g configurable-http-proxy
 
-# Copy all scripts to docker image
-RUN mkdir -p /scripts
-COPY ./scripts/* /scripts/
-
 # The port that needs to be exposed to the host system 
 # Port 8000 is what the server listens on
 EXPOSE 8000
