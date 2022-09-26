@@ -23,12 +23,12 @@ I have written a script that does all the work for you.
 The advantages of running it this way; the script will create persistance storage through the use of docker volumes.  
 This means if you delete the container or it gets corrupted, you can just run the script again and all user logins and files should be restored.
 
-1. Download `runJupyterHub.sh` from this GitHub Repo and put it on your linux enviorment
+1. Download `JupyterHub_Docker-RUN.sh` from this GitHub Repo and put it on your linux enviorment
 
 2. Run the following command:
 
    ```bash
-   sudo bash runJupyterHub.sh
+   sudo bash JupyterHub_Docker-RUN.sh
    ```
    
    > Must be run with root privilege
