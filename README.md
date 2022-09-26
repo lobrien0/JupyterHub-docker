@@ -1,6 +1,8 @@
 # JupyterHub-docker
 
-This Docker Image contains an easy setup and deployment of JupyterHub ( A JupyterLab Web Server )
+This Docker Image contains an easy setup and deployment of JupyterHub ( A JupyterLab Web Server )  
+Before you move any further, make sure docker is on your system. If not you can download it here:
+[Get Docker](https://docs.docker.com/get-docker/)
 
 [Method #1](https://github.com/skymotic/JupyterHub-docker#method-1-from-script)
 *Let the Script do it all for you* (Easy Difficulty)
@@ -42,8 +44,9 @@ Done!
 
 # Method #2: From Docker Repository
 
-The quickest and easiest way to host this JupyterHub server is to pull it from my docker repository.  
-You can *pull* and *run* the image all with one command,but first make sure [docker](https://docs.docker.com/get-docker/) is installed on you system
+> **Quick note:** This options is great for container customization, but reqires some Docker know-how if you want to do more than the default.
+
+You can *pull* and *run* the image all with one command
 
 ```bash
 docker run -d -p 8000:8000 lobr266238/jupyterhub-basic		# Will pull latest image
@@ -60,7 +63,7 @@ docker run -d -p 8000:8000 lobr266238/jupyterhub-basic		# Will pull latest image
 
 # Method #3: Build From Files
 In order to do this method, you will need to download the `Dockerfile` from this repository and put it in its own folder before continuing
-## Docker Build Process
+## Step 1: Docker Build Process
 
 1. Make sure [docker](https://docs.docker.com/get-docker/) is installed on you system
 
@@ -86,7 +89,7 @@ In order to do this method, you will need to download the `Dockerfile` from this
    >You should see an image with the *tag* you set earlier in step 3  
 
 
-## Start Docker Container
+## Step 2: Start Docker Container
 
 By default, the image is configured be started and immediately ready to use.
 
@@ -137,9 +140,12 @@ In order to create a login for yourself or others to use for jupyterhub server, 
    
 4. This should allow you to sign into the jupyter server with the user you have created
 ---
-### DONE
-The Docker Image should be built, and you should now have a running docker container with a working JupyterHub Server  
+## END
+Using one of the 3 methods above you should now have a running Docker Container with a working JupyterHub Server  
 To get to the webpage go to <http://localhost:8000/>
 
 ### External Website
-If you want to connect this to a domain and external website, I'd strongly recommend that you set up an Nginx or Apache reverse proxy using SSL and a firewall
+If you want to connect this to a domain and/or any external website, I'd strongly recommend that you set up an Nginx or Apache reverse proxy using SSL and a firewall  
+
+An example of an `nginx Reverse Proxy` is in the Repo  
+It would go under `/etc/nginx/conf.d/`
