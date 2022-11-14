@@ -17,22 +17,6 @@ USERS_VOLUME="jupyter-users"
 CONTAINER_NAME="jupyter-hub"
 HOST_EXSPOSED_PORT="8000"
 
-# If Volume "jupyter-etc" doesn't exsist, Create it
-if [[ "$(docker volume ls)" == *"${ETC_VOLUME}"* ]]; then
-	echo "ETC Volume exsists; Skipping creation"
-else
-	docker volume create ${ETC_VOLUME}
-fi
-
-
-# If Volume "jupyterhub-user" doesn't exsist, Create it
-if [[ "$(docker volume ls)" == *"${USERS_VOLUME}"* ]]; then
-	echo "USERS Volume exsists; Skipping creation"
-else
-	docker volume create ${USERS_VOLUME}
-fi
-
-
 #starts Docker Continer
 docker run -d \
 	--name ${CONTAINER_NAME} \
