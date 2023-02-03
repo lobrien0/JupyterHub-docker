@@ -3,7 +3,7 @@
 # Author Data:
 #
 #	Author:		Luke O'Brien
-#	Updated:	9/25/2020
+#	Updated:	9/25/2022
 #
 #	Descriotion:
 #		Checks if run conditions are met; if not
