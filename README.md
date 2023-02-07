@@ -42,12 +42,13 @@ It will also open port `8088`
 
 # Method #2: From Docker Repository
 
-> **Quick note:** This options is great for container customization, but reqires some Docker know-how if you want to do more than the default.
+> **Quick note:** This options is great for container customization, but reqires some Docker know-how if you want to do more than the default.  
+> For example, without the docker compose file, you will need to set up your own volumes if you want the container data to be persistant  
 
 You can *pull* and *run* the image all with one command
 
 ```bash
-docker run -d -p 8088:8000 lobr266238/jupyterhub-basic:alpine		# Will pull the alpine image
+docker run -d -p 8088:8000 lobr266238/jupyterhub-basic:alpine
 ```
 > Notice the `-d` option; This allows us to start the container in *Headless Mode* or detached from the current shell
 
