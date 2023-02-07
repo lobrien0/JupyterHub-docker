@@ -4,6 +4,9 @@ This Docker Image contains an easy setup and deployment of JupyterHub ( A Jupyte
 Before you move any further, make sure docker is on your system. If not you can download it here:
 [Get Docker](https://docs.docker.com/get-docker/)
 
+[Method #0](https://github/com/skymotic/JupyterHub-docker#method-0-docker-compose)
+*Docker Compose* This is the recomended way to run this app (Easiest)
+
 [Method #1](https://github.com/skymotic/JupyterHub-docker#method-1-from-script)
 *Let the Script do it all for you* (Easy Difficulty)
 
@@ -15,6 +18,17 @@ Before you move any further, make sure docker is on your system. If not you can 
 
 [Creating Login](https://github.com/skymotic/JupyterHub-docker#creating-login)
 *Instructions to create your login once the Docker Container is running*
+
+# Method #0: Docker Compose
+A Docker Compose file is provided in this repo. (`docker-compose.yaml`)  
+I would recomend that you download this file and then run the following comamnd to get up and running:
+
+```bash
+docker compose up -d
+```
+> `up` is telling the docker compose command to read a `docker-compoes.yaml` file
+
+> `-d` is a tag to the command, telling it to run `detached` from the new container's terminal
 
 # Method #1: From Script
 
