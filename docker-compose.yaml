@@ -3,12 +3,13 @@ version: '3.3'
 services:
   jupyter:
     image: lobr266238/jupyterhub-basic
+    container_name: JupyterHub
     volumes: 
-       - etc_data:/etc/
-       - user_data:/home/
+       - etc:/etc/
+       - user:/home/
     ports:
-      - "8088:8000"
+      - "8000:8000"
 
 volumes:
-  etc_data:
-  user_data:
+  etc:
+  user:
