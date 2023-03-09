@@ -45,8 +45,6 @@ This means if you delete the container or it gets corrupted, you can just run th
    sudo bash JupyterHub_Docker-RUN.sh
    ```
    
-   > Must be run with root privilege
-   
    >If you would like to see what the script is doing, inside the script itself are plenty of comments explaining each step
 
 ### Short Descption of what the script does:
