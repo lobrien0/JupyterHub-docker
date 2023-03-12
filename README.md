@@ -24,7 +24,7 @@ Before you move any further, make sure docker is on your system. If not you can 
 - [Change password](#change-password)
 *Information on how to change your password*
 
-- [Creating Login](#creating-login)
+- [Creating Login](#create-login)
 *Instructions to create your login once the Docker Container is running*
 
 # Method #0: Docker Compose
