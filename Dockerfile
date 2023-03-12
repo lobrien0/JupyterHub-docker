@@ -20,7 +20,8 @@ RUN apt-get install -yq --no-install-recommends \
 	pandoc \
 	texlive-xetex \
 	texlive-fonts-recommended \
-	texlive-plain-generic
+	texlive-plain-generic \
+	whois
 
 # Installs the JupyterHub server along with the JupyterLab Dependency
 # Docker Spawner allows us to generate a lab while running in a docker container
@@ -31,6 +32,13 @@ RUN python3 -m pip install jupyterlab
 
 # NPM install, Mangages all the Web handlers to provide a webpage over select ports
 RUN npm install -g configurable-http-proxy
+
+# Create Default User
+RUN useradd -m jupyteradmin
+
+# Sets password for 'jupyteradmin' to 'DeltaAlpha21'
+RUN TEMP=$(echo "\$y\$j9T$4oGJ/Vc2sgWaly1UI2dnX1\$GQrbnOVN7B4C9UOPbqI9aOdltb/0CdCX4.QU1AkeWZ0") && \
+	sed -i "s|\(.*jupyteradmin:\).*\(:.*:.*:.*:.*:.*:.*:.*\)|\1${TEMP}\2|" /etc/shadow
 
 # The port that needs to be exposed to the host system 
 # Port 8000 is what the server listens on

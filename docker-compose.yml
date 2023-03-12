@@ -2,7 +2,7 @@ version: '3.3'
 
 services:
   jupyter:
-    image: lobr266238/jupyterhub-basic
+    image: lobr266238/jupyterhub-basic:latest
     container_name: JupyterHub
     volumes: 
        - etc:/etc/
