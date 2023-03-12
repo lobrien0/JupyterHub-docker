@@ -5,7 +5,8 @@ Before you move any further, make sure docker is on your system. If not you can 
 [Get Docker](https://docs.docker.com/get-docker/)
 
 ### Table of Contents
-
+---
+Install Methods  
 - [Method #0](#method-0-docker-compose)
 *Docker Compose* This is the recomended way to run this app (Easiest)
 
@@ -18,6 +19,7 @@ Before you move any further, make sure docker is on your system. If not you can 
 - [Method #3](#method-3-build-from-files)
 *Build the Docker Image from the* `Dockerfile` *in this GitHub* (Medium-Hard Difficulty)
 
+Login Information
 - [Default Login](#default-login)
 *The default account login information*
 
@@ -26,6 +28,8 @@ Before you move any further, make sure docker is on your system. If not you can 
 
 - [Creating Login](#create-login)
 *Instructions to create your login once the Docker Container is running*
+
+---
 
 # Method #0: Docker Compose
 A Docker Compose file is provided in this repo. (`docker-compose.yaml`)  
