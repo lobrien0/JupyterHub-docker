@@ -4,19 +4,27 @@ This Docker Image contains an easy setup and deployment of JupyterHub ( A Jupyte
 Before you move any further, make sure docker is on your system. If not you can download it here:
 [Get Docker](https://docs.docker.com/get-docker/)
 
-[Method #0](https://github/com/skymotic/JupyterHub-docker#method-0-docker-compose)
+### Table of Contents
+
+- [Method #0](#method-0-docker-compose)
 *Docker Compose* This is the recomended way to run this app (Easiest)
 
-[Method #1](https://github.com/skymotic/JupyterHub-docker#method-1-from-script)
+- [Method #1](#method-1-from-script)
 *Let the Script do it all for you* (Easy Difficulty)
 
-[Method #2](https://github.com/skymotic/JupyterHub-docker#method-2-from-docker-repository)
+- [Method #2](#method-2-from-docker-repository)
 *Pull Docker Image from a Docker Repository* (Medium-Easy Difficulty)
 
-[Method #3](https://github.com/skymotic/JupyterHub-docker#method-3-build-from-files)
+- [Method #3](#method-3-build-from-files)
 *Build the Docker Image from the* `Dockerfile` *in this GitHub* (Medium-Hard Difficulty)
 
-[Creating Login](https://github.com/skymotic/JupyterHub-docker#creating-login)
+- [Default Login](#default-login)
+*The default account login information*
+
+- [Change password](#change-password)
+*Information on how to change your password*
+
+- [Creating Login](#creating-login)
 *Instructions to create your login once the Docker Container is running*
 
 # Method #0: Docker Compose
@@ -118,9 +126,38 @@ By default, the image is configured be started and immediately ready to use.
    
    >`<ImageName>` is the name you had set earlier in the *Docker Build Process*
 ---  
-# Creating Login
+# Login
 
-By defualt, the docker's container uses PAM for authentication (which is intigreated for the containers OS users)  
+## Default Login
+
+#### Username:  
+- `jupyteradmin`
+
+#### Password:  
+- `DeltaAlpha21`
+
+## Change Password
+
+Once you are able to log into the Jupyter Dashboard, you can change your password by clicking `+` icon in the top left of the screen 
+
+Then under `Other` select `Terminal`
+
+This should open a command prompt. All you need to type to change your password is the following:
+
+```bash
+passwd
+```
+
+Once you click enter, it should ask to change the password.
+
+> When you type it out, it may not look like anything it being typed.  
+> This is supposed to happen. Just finish typing out your password, then hit `<enter>`
+
+---
+
+## Create Login
+
+By default, the docker's container uses PAM for authentication (which is intigreated for the containers OS users)  
 In order to create a login for yourself or others to use for jupyterhub server, you will need to enter the container shell and add the users:
 
 1. Getting the container ID
