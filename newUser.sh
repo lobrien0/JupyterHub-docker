@@ -14,3 +14,5 @@ elif grep -Fq "$1" /etc/passwd; then
 
 else
     useradd -m "$1"
+    echo "[+] SYSTEM: The User: $1 was Created."
+fi
