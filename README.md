@@ -29,6 +29,9 @@ Login Information
 - [Managing Users](#managing-users)
 *Information to manage user accounts and sessions*
 
+Notes  
+- [End-Notes](#end-notes)
+
 ---
 
 # Method #0: Docker Compose
@@ -175,12 +178,16 @@ Here you have the ability to manage all of the users on the server
 - Goto `Authorize Users` to manage passwords
 - Goto `Admin` to manage user sessions and servers 
 
-## END
+# End-Notes
+
 Using one of the 4 methods above you should now have a running Docker Container with a working JupyterHub Server  
 To get to the webpage go to <http://localhost:8000/>
 
 ### External Website
+
 If you want to connect this to a domain and/or any external website, I'd strongly recommend that you set up an Nginx or Apache reverse proxy using SSL and a firewall  
 
-An example of an `nginx Reverse Proxy` is in the Repo  
+An example of an Nginx Reverse Proxy is listed as `nginxReverseProxy.conf`  
+
 It would go under `/etc/nginx/conf.d/`
+(If your using Nginx)
