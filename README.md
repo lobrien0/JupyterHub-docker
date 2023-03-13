@@ -20,14 +20,14 @@ Install Methods
 *Build the Docker Image from the* `Dockerfile` *in this GitHub* (Medium-Hard Difficulty)
 
 Login Information
-- [Default Login](#default-login)
-*The default account login information*
+- [First Time Sign-Up](#first-time-sign-up)
+*Information regarding how to make the admin account and sign in for the first time*
 
-- [Change password](#change-password)
-*Information on how to change your password*
+- [Adding Users](#adding-more-users)
+*How to sign up, and how to approve accounts*
 
-- [Creating Login](#create-login)
-*Instructions to create your login once the Docker Container is running*
+- [Managing Users](#managing-users)
+*Information to manage user accounts and sessions*
 
 ---
 
@@ -132,69 +132,50 @@ By default, the image is configured be started and immediately ready to use.
 ---  
 # Login
 
-## Default Login
+## First Time Sign-Up
 
-#### Username:  
-- `jupyteradmin`
+When the server first starts, there will be no accounts made.
+To create the first admin account **you must** do the following
 
-#### Password:  
-- `DeltaAlpha21`
+1. Click `Sign Up`
 
-## Change Password
+2. For the username enter `jupyteradmin`
 
-Once you are able to log into the Jupyter Dashboard, you can change your password by clicking `+` icon in the top left of the screen 
+3. Enter a password of your choosing
 
-Then under `Other` select `Terminal`
+Users have to be approved in order to sign into the JupyterHub Server, but the `jupyteradmin` account is the only exception.
 
-This should open a command prompt. All you need to type to change your password is the following:
+> Once the above has been done, you may login
 
-```bash
-passwd
-```
+## Adding more users
 
-Once you click enter, it should ask to change the password.
+To add more users, do the following:
 
-> When you type it out, it may not look like anything it being typed.  
-> This is supposed to happen. Just finish typing out your password, then hit `<enter>`
+1. Direct the person to your website, and have then `Sign Up`
 
----
+2. Then you will need to sign in with the **admin account**
 
-## Create Login
+3. On the **admin account** go to `File > Hub Control Panel`
 
-By default, the docker's container uses PAM for authentication (which is intigreated for the containers OS users)  
-In order to create a login for yourself or others to use for jupyterhub server, you will need to enter the container shell and add the users:
+4. In the top nav-bar click `Authorize Users`
 
-1. Getting the container ID
+Here you should be able to authorize anyone who had signed up.
 
-   ```bash
-   docker ps
-   ```  
-   > Notice the `ps` command shows all running docker containers
-   
-   Find the running container and copy the ID shown
-   
-2. Entering the Container's shell where `<ContainerID>` is the ID from the last step
+## Managing Users
 
-   ```bash
-   docker exec -it <ContainerID> /bin/bash
-   ```  
-   > Notice the `exec` command allows you to execute a command on the docker container
-   
-   > Notice the `-it` option allows us to enter commands in *Interactive Mode*
-   
-   > Notice the `/bin/bash` allows us to enter into a full interactive shell
-   
-3. Once in the Container's shell we will need to add each user
+Using an account with admin permissions do the following:
 
-   ```bash
-   adduser <USERNAME>
-   ```  
-   You can repeat this command for as many users as you need. (I will be working on a way to add users by script)
-   
-4. This should allow you to sign into the jupyter server with the user you have created
----
+1. Login
+
+2. Goto `File > Hub Control Panle`
+
+Here you have the ability to manage all of the users on the server
+
+- Goto `Authorize Users` to manage passwords
+- Goto `Admin` to manage user sessions and servers 
+
 ## END
-Using one of the 3 methods above you should now have a running Docker Container with a working JupyterHub Server  
+Using one of the 4 methods above you should now have a running Docker Container with a working JupyterHub Server  
 To get to the webpage go to <http://localhost:8000/>
 
 ### External Website
