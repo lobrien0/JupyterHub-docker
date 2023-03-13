@@ -137,13 +137,14 @@ By default, the image is configured be started and immediately ready to use.
 When the server first starts, there will be no accounts made.
 To create the first admin account **you must** do the following
 
-1. Click `Sign Up`
+1. On the Login page, Click `Sign Up`
 
 2. For the username enter `jupyteradmin`
 
-3. Enter a password of your choosing
+3. Enter a password of your choosing  
+   > Recommended: Make it a strong password
 
-Users have to be approved in order to sign into the JupyterHub Server, but the `jupyteradmin` account is the only exception.
+Normally, users have to be approved in order to sign into the JupyterHub Server, but the `jupyteradmin` account is the only exception.  
 
 > Once the above has been done, you may login
 
