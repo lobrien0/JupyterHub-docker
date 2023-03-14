@@ -44,7 +44,7 @@ COPY ./jupyterhub_config.py /app/
 # Copys over a UNIX user creation script and adds a call to the Native Authenticator-
 # Python Library for proper user creation
 COPY ./newUser.sh /app/
-RUN sed -i "335i \ \ \ \ \ \ \ \ os.system(f'bash /app/newUser.sh {username}')" /usr/local/lib/python3.10/dist-packages/nativeauthenticator/nativeauthenticator.py
+RUN sed -i "250i \ \ \ \ \ \ \ \ \ \ \ \ os.system(f'bash /app/newUser.sh {username}')" /usr/local/lib/python3.10/dist-packages/nativeauthenticator/nativeauthenticator.py
 
 # The port that needs to be exposed to the host system 
 # Port 8000 is what the server listens on

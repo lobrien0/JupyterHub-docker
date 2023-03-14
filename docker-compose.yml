@@ -3,12 +3,14 @@ version: '3.3'
 services:
   jupyter:
     image: lobr266238/jupyterhub-basic:latest
-    container_name: JupyterHub
-    volumes: 
+    container_name: jupyterhub
+    volumes:
+       - user-conf:/app/ 
        - user-data:/home/
     ports:
       - "8000:8000"
     restart: unless-stopped
 
 volumes:
+  user-conf:
   user-data:
