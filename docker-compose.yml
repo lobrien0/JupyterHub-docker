@@ -5,12 +5,10 @@ services:
     image: lobr266238/jupyterhub-basic:latest
     container_name: JupyterHub
     volumes: 
-       - etc:/etc/
-       - users:/home/
+       - user-data:/home/
     ports:
       - "8000:8000"
     restart: unless-stopped
 
 volumes:
-  etc:
-  users:
+  user-data:
